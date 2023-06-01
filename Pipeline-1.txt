@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    stages {
+        stage('Requirements') {
+            steps {
+                echo 'Getting Requirements....'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building....'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..1'
+                echo 'Testing..2'
+                echo 'Testing..3'
+            }
+        }
+        stage('Report') {
+            steps {
+                echo 'Reporting....'
+            }
+        }
+    }
+}
+
+*******************
+In the steps, echo can be replaced by:
+git:  Check out code from a git repo
+sh: Run a shell scripts or local command
+archiveArtifacts: allow us archive(store) any artifacts created by job
+
+documentation: https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/
+*******************

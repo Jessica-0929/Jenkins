@@ -1,5 +1,5 @@
 # Jenkins
-Tips about how to use jenkins, pipeline, webhooker, with docker etc.
+An example shows how to trigger Jenkins server by adding the webhook on githhub.
 
 
 pushing from github

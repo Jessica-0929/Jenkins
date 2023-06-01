@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    environment {
+        MAX_SIZE = 10
+        MIN_SIZE = 1
+    }
+    stages {
+        stage('Default Scale') {
+            steps {
+                echo "MAX_SIZE = ${env.MAX_SIZE}"
+                echo "MIN_SIZE = ${env.MIN_SIZE}"
+            }
+        }
+        stage('Scale by 10x') {
+            environment {
+                MAX_SIZE = 100
+                MIN_SIZE = 10
+            }
+            steps {
+                echo "MAX_SIZE = ${env.MAX_SIZE}"
+                echo "MIN_SIZE = ${env.MIN_SIZE}"
+            }
+        }
+    }
+}
+
+
+
+*************************
+variable of pipeline can be: 
+Environment: can be local or global
+echo env.MAX_SIZE        or     echo MAX_SIZE
+echo "$env.MAX_SIZE"     or     echo "$MAX_SIZE"      in string
+echo "${env.MAX_SIZE}"     or     echo "${MAX_SIZE}"      in string also ok
+
+Current build:
+Parameters: (should be run twice then works) string, text, boolean, choice, password 
+*************************
